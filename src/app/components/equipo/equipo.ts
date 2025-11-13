@@ -26,8 +26,8 @@ export class Equipos implements OnInit {
         const idEquipo=params.get('idEquipo')??'0'
 
         forkJoin({
-          equipo: this.equiposervice.findEquipo(parseInt(idEquipo)).pipe(tap(()=> this.cargando.set(true)),delay(4000)),
-          jugadores:this.equiposervice.getJugadoresEquipo(parseInt(idEquipo)).pipe(tap(()=> this.cargando.set(true)),delay(4000))
+          equipo: this.equiposervice.findEquipo(parseInt(idEquipo)),
+          jugadores:this.equiposervice.getJugadoresEquipo(parseInt(idEquipo))
       
         })
       
